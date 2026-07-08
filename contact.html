@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World</title>
+  <title>Contact</title>
   <style>
     :root {
       color-scheme: dark;
@@ -28,9 +28,9 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 18% 20%, rgba(110, 231, 255, 0.26), transparent 28%),
-        radial-gradient(circle at 78% 25%, rgba(255, 122, 174, 0.23), transparent 25%),
-        radial-gradient(circle at 50% 88%, rgba(255, 209, 102, 0.19), transparent 30%),
+        radial-gradient(circle at 18% 18%, rgba(255, 209, 102, 0.22), transparent 28%),
+        radial-gradient(circle at 78% 24%, rgba(110, 231, 255, 0.24), transparent 25%),
+        radial-gradient(circle at 48% 88%, rgba(255, 122, 174, 0.2), transparent 30%),
         linear-gradient(135deg, #080a12 0%, #101827 55%, #0a0d18 100%);
     }
 
@@ -81,8 +81,8 @@
     }
 
     main {
-      width: min(92vw, 860px);
-      padding: clamp(34px, 7vw, 76px);
+      width: min(92vw, 820px);
+      padding: clamp(34px, 7vw, 72px);
       position: relative;
       isolation: isolate;
       border: 1px solid var(--line);
@@ -90,7 +90,6 @@
       background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045));
       box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
       backdrop-filter: blur(22px);
-      text-align: center;
     }
 
     main::before {
@@ -99,13 +98,13 @@
       inset: -1px;
       z-index: -1;
       border-radius: inherit;
-      background: linear-gradient(120deg, var(--cyan), transparent 32%, var(--rose) 68%, var(--gold));
-      opacity: 0.55;
+      background: linear-gradient(120deg, var(--gold), transparent 30%, var(--cyan) 62%, var(--rose));
+      opacity: 0.52;
       filter: blur(18px);
     }
 
     .eyebrow {
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       color: var(--gold);
       font-size: 0.78rem;
       font-weight: 800;
@@ -115,69 +114,62 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(3.5rem, 11vw, 9rem);
-      line-height: 0.9;
+      font-size: clamp(3rem, 8vw, 6.6rem);
+      line-height: 0.96;
       letter-spacing: 0;
       text-wrap: balance;
     }
 
     h1 span {
-      display: block;
       color: transparent;
-      background: linear-gradient(90deg, var(--cyan), #ffffff 42%, var(--rose));
+      background: linear-gradient(90deg, var(--gold), #ffffff 48%, var(--cyan));
       -webkit-background-clip: text;
       background-clip: text;
-      text-shadow: 0 18px 48px rgba(110, 231, 255, 0.22);
     }
 
     p {
-      max-width: 560px;
-      margin: 28px auto 0;
+      max-width: 620px;
+      margin: 24px 0 0;
       color: var(--muted);
-      font-size: clamp(1rem, 2.4vw, 1.25rem);
-      line-height: 1.7;
+      font-size: clamp(1rem, 2.1vw, 1.18rem);
+      line-height: 1.72;
     }
 
-    .sparkle-row {
-      display: flex;
-      justify-content: center;
+    .contact-list {
+      display: grid;
       gap: 12px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
 
-    .sparkle {
-      width: 11px;
-      height: 11px;
-      border-radius: 999px;
-      background: var(--cyan);
-      box-shadow: 0 0 24px currentColor;
-      animation: pulse 1.8s ease-in-out infinite;
+    .contact-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 64px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.07);
+      font-weight: 800;
+      text-decoration: none;
+      transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
     }
 
-    .sparkle:nth-child(2) {
-      width: 15px;
-      height: 15px;
-      background: var(--rose);
-      animation-delay: 0.22s;
+    .contact-list a:hover {
+      border-color: rgba(110, 231, 255, 0.65);
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
     }
 
-    .sparkle:nth-child(3) {
-      background: var(--gold);
-      animation-delay: 0.44s;
+    .contact-list span {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 700;
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: translateY(0) scale(1);
-        opacity: 0.62;
-      }
-      50% {
-        transform: translateY(-8px) scale(1.25);
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 560px) {
+    @media (max-width: 620px) {
       body {
         padding: 92px 0 28px;
       }
@@ -197,27 +189,38 @@
         padding: 32px 22px;
       }
 
-      p {
-        line-height: 1.55;
+      .contact-list a {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
       }
     }
   </style>
 </head>
 <body>
   <nav aria-label="Site navigation">
-    <a class="active" href="hello-world.html">Home</a>
+    <a href="hello-world.html">Home</a>
     <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <a class="active" href="contact.html">Contact</a>
   </nav>
 
-  <main aria-label="Hello world greeting">
-    <p class="eyebrow">A tiny page with big energy</p>
-    <h1>Hello <span>World</span></h1>
-    <p>Welcome to your shiny new HTML file, dressed up with glass, glow, and a little motion.</p>
-    <div class="sparkle-row" aria-hidden="true">
-      <span class="sparkle"></span>
-      <span class="sparkle"></span>
-      <span class="sparkle"></span>
+  <main>
+    <p class="eyebrow">Say hello</p>
+    <h1>Let's <span>connect.</span></h1>
+    <p>Drop a note, send an idea, or just wave from across the internet. This contact page is ready for your real details whenever you want them.</p>
+    <div class="contact-list" aria-label="Contact options">
+      <a href="mailto:muzi.khawar@gmail.com">
+        Email
+        <span>hello@example.com</span>
+      </a>
+      <a href="tel:+92 313 3862835">
+        Phone
+        <span>+1 000 000 0000</span>
+      </a>
+      <a href="hello-world.html">
+        Back Home
+        <span>Return to the main page</span>
+      </a>
     </div>
   </main>
 </body>
