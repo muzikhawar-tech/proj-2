@@ -3,218 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --ink: #f7fbff;
-      --muted: #afbac8;
-      --cyan: #6ee7ff;
-      --rose: #ff7aae;
-      --gold: #ffd166;
-      --line: rgba(255, 255, 255, 0.18);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      margin: 0;
-      display: grid;
-      place-items: center;
-      overflow-x: hidden;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at 16% 18%, rgba(255, 122, 174, 0.22), transparent 28%),
-        radial-gradient(circle at 82% 30%, rgba(110, 231, 255, 0.23), transparent 26%),
-        radial-gradient(circle at 54% 86%, rgba(255, 209, 102, 0.18), transparent 30%),
-        linear-gradient(135deg, #080a12 0%, #101827 55%, #0a0d18 100%);
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
-      background-size: 52px 52px;
-      mask-image: radial-gradient(circle, black, transparent 72%);
-    }
-
-    nav {
-      position: fixed;
-      top: 22px;
-      left: 50%;
-      z-index: 2;
-      display: flex;
-      gap: 6px;
-      padding: 7px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(8, 10, 18, 0.58);
-      backdrop-filter: blur(18px);
-      transform: translateX(-50%);
-    }
-
-    nav a {
-      min-width: 86px;
-      padding: 10px 14px;
-      border-radius: 6px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-align: center;
-      text-decoration: none;
-      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--ink);
-      background: rgba(255, 255, 255, 0.13);
-      transform: translateY(-1px);
-    }
-
-    main {
-      width: min(92vw, 860px);
-      padding: clamp(34px, 7vw, 72px);
-      position: relative;
-      isolation: isolate;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045));
-      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
-      backdrop-filter: blur(22px);
-    }
-
-    main::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      z-index: -1;
-      border-radius: inherit;
-      background: linear-gradient(120deg, var(--rose), transparent 32%, var(--cyan) 68%, var(--gold));
-      opacity: 0.52;
-      filter: blur(18px);
-    }
-
-    .eyebrow {
-      margin: 0 0 16px;
-      color: var(--gold);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(3rem, 8vw, 6.8rem);
-      line-height: 0.96;
-      letter-spacing: 0;
-      text-wrap: balance;
-    }
-
-    h1 span {
-      color: transparent;
-      background: linear-gradient(90deg, var(--rose), #ffffff 48%, var(--cyan));
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    p {
-      max-width: 650px;
-      margin: 26px 0 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2.1vw, 1.18rem);
-      line-height: 1.72;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .stat {
-      min-height: 92px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--ink);
-      font-size: 1.45rem;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.35;
-    }
-
-    @media (max-width: 620px) {
-      body {
-        padding: 92px 0 28px;
-      }
-
-      nav {
-        top: 14px;
-        width: min(92vw, 340px);
-      }
-
-      nav a {
-        min-width: 0;
-        flex: 1;
-        padding-inline: 8px;
-      }
-
-      main {
-        padding: 32px 22px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>About | Muzi Khawar</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav aria-label="Site navigation">
-    <a href="hello-world.html">Home</a>
-    <a class="active" href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <header class="site-header">
+    <a class="logo" href="index.html">MK</a>
+    <nav aria-label="Site navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <main>
-    <p class="eyebrow">About this little site</p>
-    <h1>Small file, <span>big shine.</span></h1>
-    <p>This mini website is built with plain HTML and CSS, but it still gets to feel polished: glowing color, crisp spacing, glassy panels, and navigation that works anywhere you open the files.</p>
-    <div class="stats" aria-label="Site highlights">
-      <div class="stat">
-        <strong>3</strong>
-        <span>Linked pages</span>
+    <section class="page-hero">
+      <p class="eyebrow">About me</p>
+      <h1>I am learning to build websites that are simple, clear, and easy to use.</h1>
+      <p class="intro">Use this page to tell visitors who you are, what you are learning, and what kind of work you want to do next.</p>
+    </section>
+
+    <section class="section about-layout">
+      <div>
+        <h2>My Story</h2>
+        <p>I started this portfolio as my first web project. Right now I am practicing HTML, CSS, layout, responsive design, and the habits that make websites feel polished.</p>
+        <p>As I build more projects, I will add them here with short descriptions, screenshots, and links to the code.</p>
       </div>
-      <div class="stat">
-        <strong>0</strong>
-        <span>External dependencies</span>
-      </div>
-      <div class="stat">
-        <strong>100%</strong>
-        <span>Browser ready</span>
-      </div>
-    </div>
+      <aside class="info-card">
+        <h3>Quick Details</h3>
+        <dl>
+          <div>
+            <dt>Focus</dt>
+            <dd>Frontend development</dd>
+          </div>
+          <div>
+            <dt>Learning</dt>
+            <dd>HTML, CSS, JavaScript</dd>
+          </div>
+          <div>
+            <dt>Goal</dt>
+            <dd>Build real projects</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
   </main>
+
+  <footer>
+    <p>Built by Muzi Khawar.</p>
+  </footer>
 </body>
 </html>
